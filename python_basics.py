@@ -1,73 +1,75 @@
 print("Intro to Python")
-# Comment - do not execute
-# to comment 
-# multiple lines, highlite the
-# lines and ctrl /
+# Comment - does not execute
+# Describes your code for others
+
+# Multi lines 
+# comment Use 
+# ctrl /
 
 # Case sensitive
-# Extra spaces do not matter around commands, operators
-# Spaces DO matter in indentation (code blocks).
-# Strings can use "" OR ''. BE CONSISTENT
-print("Hello World")
-print('Hello World')
-#"" is more common
-# print ('Let's have a groovy day!')
-print("Let's have a groovy day!")
+# Extra spaces in your code do not usually matter
+# Strings can use "" OR ''
+print("Hello")
+print('Hello')
 
-# Escape characters/sequences - provide a way to perform an action in a string
+print("Let's go crazy")
+# print('Let's go crazy')
+
+# Escape character/sequences - provide a way to perform an action IN a string
 print("It's a \"groovy\" day")
 print('It\'s a "groovy" day')
 print("Hello\nWorld") # New line
 print("Name:\tShane") # Tab
+
 print("To go to a new line in a string use \\n")
 
 # Variables
-# A named box that holds value
+# a named box that holds a value
 # value can change
-# names contain only letters, numbers, and _ and cannot start with a number
-# use snake_case
-# We do not need to declare/create them before use
-# cannot be named keywords
+# use snake_case for the names
+# names can only contain letters, numbers and _. Cannot start with a number
+# not explicitly declared (in Python)
 
-# examples of assigning values to variables
+# datatypes
 first_name = "Shane" # String
 age = 54 # integer
-price = 12.54 # float
-is_valid = True # Boolean
+price = 12.23 # float
+is_valid = True # Boolean (True/False)
 
-# Using variables with strings
-# string contatonation
-# + is string contatonation operator in Python
-print("Welcome " + first_name)
+# String formatting
+# String concatonation
+print("Your name is " + first_name)
+print("Your name is " + first_name + " and you are " + str(age) + " years young")
 
-# To use + with non strings you must cast the variables to strings
-print("You are " + str(age) + " years old")
+# OR
+print("Your name is",first_name,"and you are",age,"years young")
 
-# use a , instead of + and datatype does matter
-print("You are",age,"years old")
+# OR (Best way)
+print(f"Your name is {first_name} and you are {age} years young")
 
-# preferred way (format strings)
-print(f"Hello {first_name}! You are {age} years old")
+# constants
+# like a variable that does not change
+# Use SCREAMING_SNAKE_CASE
 
-# Constants - Like a variable but its value must stay the same
-# use SCREAMING_SNAKE_CASE
-# gives a name to a value
-# if the value of the constant changes, everywhere it is used also changes
-GST_RATE = 0.04
-gst = 100 * GST_RATE
+GST_RATE = 0.05
+subtotal = 100
+total = subtotal * 0.05
+total = subtotal * GST_RATE
 
+# Input from user
+# Input always returns a string
+name = input("Enter your name: ")
+print(f"Welcome {name}")
 
+#add to numbers and display the sum
+number1 = input("Enter number 1: ")
+number2 = input("Enter number 2: ")
 
+sum = int(number1) + int(number2)
+print(f"{number1} + {number2} = {sum}")
+# OR
+number1 = int(input("Enter number 1: "))
+number2 = int(input("Enter number 2: "))
 
-
-
-
-
-
-
- 
-
-
-
-
-
+sum = number1 + number2
+print(f"{number1} + {number2} = {sum}")
