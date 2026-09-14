@@ -58,18 +58,28 @@ total = subtotal * GST_RATE
 
 # Input from user
 # Input always returns a string
-name = input("Enter your name: ")
-print(f"Welcome {name}")
+# name = input("Enter your name: ")
+# print(f"Welcome {name}")
 
-#add to numbers and display the sum
-number1 = input("Enter number 1: ")
-number2 = input("Enter number 2: ")
+# #add to numbers and display the sum
+# number1 = input("Enter number 1: ")
+# number2 = input("Enter number 2: ")
 
-sum = int(number1) + int(number2)
-print(f"{number1} + {number2} = {sum}")
-# OR
-number1 = int(input("Enter number 1: "))
-number2 = int(input("Enter number 2: "))
+# sum = int(number1) + int(number2)
+# print(f"{number1} + {number2} = {sum}")
+# # OR
+# number1 = int(input("Enter number 1: "))
+# number2 = int(input("Enter number 2: "))
 
-sum = number1 + number2
-print(f"{number1} + {number2} = {sum}")
+# sum = number1 + number2
+# print(f"{number1} + {number2} = {sum}")
+
+#Prompt the user for 2 numbers and place them in 2 variables
+#print out the values in the variables
+    #Number1: 20
+    #Number2: 40
+#Swap the numbers in the variables so the value in number2 is the value from number1 and vice versa
+#print out the values in the variables
+    #Number1: 40
+    #Number2: 20
+
