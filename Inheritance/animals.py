@@ -1,8 +1,15 @@
+#create an Animal class with name, color, num_legs attributes
+#code the constructor
+
 class Animal:
-    def __init__(self, name:str, color:str, num_legs:int)->None:
-        self.name = name 
+    def __init__(self, name:str, color:str, num_legs:int)->None:            
+        self.name = name
         self.color = color
         self.num_legs = num_legs
+    #override __str__ to return:
+    # Name: name 
+    # Color: color
+    # Number of Legs: num_legs 
 
     def __str__(self)->str:
         return (
@@ -10,44 +17,47 @@ class Animal:
             f"Color: {self.color}\n"
             f"Number of Legs: {self.num_legs}\n"
         )
-
-    def __repr__(self) ->str:
-        return f"Animal(name = {self.name!r}, color =  {self.color!r}, num_legs = {self.num_legs})"  
-
-    def eat(self)->None:        
-        print(f"{self.name} starts eating, yum yum yum")
+    def eat(self)->None:
+        print(f"{self.name} starts eating. Yum Yum")
 
     def make_a_noise(self)->None:
-        print(f"{self.name} makes an interesting noise")
+        print(f"{self.name} makes an interesting noise....")
 
     def move(self)->None:
-        print(f"{self.name} runs around!")
+        print(f"{self.name} moves around")
 
 
-    #Create a dog class that will inherit all the attributes/methods from the animal class
+#Dog class which inherits from Animal
 class Dog(Animal):
-    def __init__(self, name:str, color:str, num_legs:int, breed:str)->None:
-        #use the attributes from Animal
-        super().__init__(name, color, num_legs)#share these attributes from the Animal class
-        # self.name = name 
-        # self.color = color
-        # self.num_legs = num_legs
+    def __init__(self,name:str,color:str, num_legs:int, breed:str)->None:
+        #super() refers to the Parent class(Animal)
+        #call the construtor from the Parent(Animal)
+        super().__init__(name,color,num_legs)
         self.breed = breed
-
+    #override the __str__ from the parent (Animal) to include breed
     def __str__(self)->str:
-        #call the __str__ from Animal to get name, color, num_legs
-        return_string = super().__str__()
-        #append the breed attribute of the dog
-        return_string += f"Breed:{self.breed}\n"
-        #return the updated string
+        return_string = super().__str__()#get the string from the parent __str__
+        return_string += f"Breed: {self.breed}\n"#add on to it the additional string
         return return_string
 
-    def make_a_noise(self)->None:
-        print(f"{self.name} starts barking loudly! Bark Bark!")
-
+    #Dog specific method
     def chase_car(self)-> None:
-        print(f"{self.name} chases after the car!")
+        print(f"{self.name} chases a car")
 
-    
+    #Override make_a_noise() for dog
+    def make_a_noise(self)->None:
+        print(f"{self.name} starts barking! Woof Woof!")     
+        
+#Testing
+def main():
+    animal1 = Animal("Patrick","Blue",2)
+    print(animal1)
+    animal1.eat()
+    animal1.make_a_noise()
+    animal1.move()
+    dog1 = Dog("Judas","lime green",4,"Golden Retriever")
+    print(dog1)
+    dog1.make_a_noise()
 
-
+if __name__ == "__main__":
+    main()

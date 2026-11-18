@@ -1,24 +1,29 @@
 from animals import Animal, Dog
 
 def main():
-    dog = Dog("Roger","Brown",4,"Poodle")
-    cat = Animal("Fluffy","Black",4)
-    bird = Animal("Buddy","Green",2)
+    dog = Dog("Rover","Brown",4,"Schnoodle")
+    cat = Animal("Fluffy","Black",3)
+    bird = Animal("Buddy","green",2)
 
-    #create a list of our animals
+    #create a list of the animals
     animals = [dog,cat,bird]
 
-    #loop through the animals and have them all make a noise, move and eat
-    for animal in animals:
-        print("-----------------")
-        print(animal)
+    #Loop through the list and display each animals name, color, num_legs and call make_a_noise(), move(), and eat() for each animal
+    
+    #Name:
+    #Color:
+    #Number of Legs:
+    #method calls
 
+    for animal in animals:
+        print("--------")
+        print(animal)
         animal.make_a_noise()
         animal.move()
         animal.eat()
-        #check to see if the animal is a dog so the chase_car method can be used
+        #check to see if animal is a dog(Dog) that has a chase_car()
         if isinstance(animal,Dog):
             animal.chase_car()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
