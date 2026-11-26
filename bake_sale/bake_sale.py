@@ -134,7 +134,7 @@ class BakeSale:
         else:
             print("There are no pickups remaining for that date.")
 
-    def prompt_for_order(bake_sale: BakeSale) -> None:
+    def prompt_for_order(self)-> None:
         order_id = input("Order ID: ").strip()
         customer_name = input("Customer name: ").strip()
         item = input("Item: ").strip()
@@ -160,7 +160,7 @@ class BakeSale:
                 order = GiftOrder(order_id, customer_name, item, quantity, pickup_date, False, gift_message)
             else:
                 raise ValueError("Order type must be regular or gift.")
-            bake_sale.add_order(order)
+            self.add_order(order)
         except ValueError as error:
             print(error)
             return
